@@ -1,0 +1,5 @@
+<ul id="sidebar-exporters" class="collapse nav nav-pills nav-stacked" data-hook="admin_exporters_sub_tabs">
+  <% Spree::ExporterCore::Config.exporters.each do |exporter| %>
+    <%= tab exporter.name, url: spree.admin_exports_path(exporter_id: exporter.key) %>
+  <% end %>
+</ul>

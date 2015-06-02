@@ -1,0 +1,14 @@
+Description:
+    It will generate a new mechanism for exporting data, so only worry for implementation
+
+Example:
+    rails generate exporter Thing
+
+    This will create:
+        app/models/spree/exporter_core/thig_exporter.rb
+
+    Insert exporter locales into:
+        config/spree_exporter_core.en.yml
+
+    And update exporters list at:
+        config/initializers/spree.rb

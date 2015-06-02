@@ -5,9 +5,15 @@ module Spree
       isolate_namespace Spree
       engine_name 'spree_exporter_core'
 
+      config.autoload_paths += %W(#{config.root}/lib)
+
       # use rspec for tests
       config.generators do |g|
         g.test_framework :rspec
+      end
+
+      initializer "spree.register.exporters_configuration", :before => :load_config_initializers do |app|
+        Spree::ExporterCore::Config = Spree::ExportersConfiguration.new
       end
 
       def self.activate

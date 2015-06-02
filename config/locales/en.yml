@@ -2,4 +2,31 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      spree/export:
+        one: Export
+        other: Exports
+    attributes:
+      spree/export:
+        document: Document
+        started_at: Started
+        finished_at: Finished
+        state: State
+        created_at: Generated
+        updated_at: Updated
+        exporter: Exporter
+        messages: Messages
+  spree:
+    exporters: Exporters
+    admin:
+      tab:
+        exporters: Export
+    spree_exporter_core:
+      exports: Exporters
+      export: Export %{id}
+      show: Show
+      new_export: New Export
+      document: Document
+      submit_text: Save
+    please_wait: Please wait&hellip;
