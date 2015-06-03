@@ -6,7 +6,7 @@ Enables a easily way for exports data from Spree, depending as you need.
 Installation
 ------------
 
-Add spree_exporter_core to your Gemfile:
+Add _spree\_exporter\_core_ to your Gemfile:
 
 ```ruby
 gem 'spree_exporter_core'
@@ -18,6 +18,63 @@ Bundle your dependencies and run the installation generator:
 bundle
 bundle exec rails g spree:exporter_core:install
 ```
+
+Note: `SpreeExporterCore` uses `ActiveJob` for background processing. You may want to specify an adapter before exporting, otherwise the job is immediately executed.
+
+
+Usage
+-----
+
+You can generate an exporter file running
+
+```ruby
+rails g spree:exporter_core:exporter Thing
+```
+
+This will generate the needed files in order to make the exporter to work as intended.
+
+- Create new *exporter* file
+- Insert exporter locales for new *exporter* class
+- And, update *exporters* list
+
+Then, just restart your rails server
+
+### New exporter Class
+
+The new exporter class will be placed at `app/models/spree/exporter_core/thing_exporter.rb`
+
+TODO - Sample
+
+Note: you can give the exporter any name you want, thou it is highly recommended to give one that describes its content
+
+
+### Locales
+
+Locales will be placed at `config/spree_exporter_core.en.yml`
+
+```
+en:
+  spree:
+    exporter_core:
+      exporters:
+        thing:
+          title: Thing Exporter
+          name: Thing
+```
+
+Every exporter needs `title` for views and `name` for the menu
+
+### Exporter List
+
+`ExporterCore` defines a list with the available exporters, you may want to add or remove your own exporters. Remember to make your classes to inherit from `Spree::ExporterCore::BaseExporter`, otherwise needed methods won't be defined.
+
+Edit `config/initializers/spree.rb` to define/modify the available exporters.
+
+
+```ruby
+Spree::ExporterCore::Config.exporters << Spree::ThingExporter
+```
+
 
 Testing
 -------
@@ -39,4 +96,6 @@ require 'spree/exporter_core/factories'
 Licence
 -------
 
-Copyright (c) 2015 [Acid Labs](http://acid.cl), released under the New BSD License
+The MIT License (MIT)
+
+Copyright (c) 2015 - [Acid Labs](http://acid.cl)
