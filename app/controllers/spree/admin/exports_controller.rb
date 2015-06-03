@@ -25,10 +25,8 @@ module Spree
 
       private
         def location_after_save
-          uid = ActiveWaiter.enqueue ExportJob, @export
-
-          # admin_active_waiter_path(uid)
-          admin_export_path(@export, exporter_id: @exporter.key, uid: uid)
+          ExportJob.perform_later @export
+          admin_export_path(@export, exporter_id: @exporter.key)
         end
 
         def set_exporter

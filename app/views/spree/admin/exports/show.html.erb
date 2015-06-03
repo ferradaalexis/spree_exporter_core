@@ -29,16 +29,6 @@
   </dl>
 </fieldset>
 
-<% if params[:uid] %>
-  <div class="active-waiter-container" data-url="<%= admin_active_waiter_path params[:uid] %>">
-    <div class="progress">
-      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="width: 100%; min-width: 3em;">
-        <span><%== Spree.t(:please_wait) %></span>
-      </div>
-    </div>
-  </div>
-<% end %>
-
 <% if @export.messages.any?  %>
   <div class="row">
     <div class="col-sm-12">

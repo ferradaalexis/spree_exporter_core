@@ -34,7 +34,4 @@ Gem::Specification.new do |s|
 
   # For handling progress status
   s.add_dependency 'state_machine', '~> 1.2.0'
-
-  # A simple mechanism allowing your users to wait for the completion of your ActiveJob
-  s.add_development_dependency 'active_waiter'#, github: 'choonkeat/active_waiter'#, :tag => 'v0.3.0'
 end
