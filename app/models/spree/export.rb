@@ -3,15 +3,15 @@ class Spree::Export < ActiveRecord::Base
 
   serialize :messages, Array
 
-  ALLOWED_FILE_FORMATS = /^text\/csv|application\/(octet-stream|vnd.openxmlformats-officedocument.spreadsheetml.sheet)$/
 
   has_attached_file :document
-
-  # validates_attachment_presence :document
-  validates_attachment_content_type :document, content_type: ALLOWED_FILE_FORMATS
-  # do_not_validate_attachment_file_type :document
+  do_not_validate_attachment_file_type :document
 
   state_machine :initial => :created do
+    state :completed do
+      # validates_attachment_presence :document
+    end
+
     event :process do
       transition :created => :processing
     end

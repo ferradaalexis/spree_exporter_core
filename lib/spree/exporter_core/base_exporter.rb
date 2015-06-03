@@ -4,9 +4,6 @@ module Spree
       def initialize export_id, options={}
         @export  = Spree::Export.find(export_id)
 
-        @filename = @export.document_file_name
-        @filepath = @export.document.path
-
         @export.messages = []
 
         # Custom behavior
@@ -26,21 +23,12 @@ module Spree
       def process
         before_process
 
+        begin
+          @export.document = export_data
 
-        ActiveRecord::Base.transaction do
-          begin
-            export_data
-
-          rescue => e
-            add_error message: e.message, backtrace: e.backtrace
-
-            raise ActiveRecord::Rollback
-          end
+        rescue => e
+          add_error message: e.message, backtrace: e.backtrace
         end
-
-
-        # ToDo - Make file with data exported
-        # ToDo - Save file into export model
 
         after_process
       end
