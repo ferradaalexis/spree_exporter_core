@@ -2,12 +2,12 @@
   <div class="form-actions" data-hook="buttons">
     <%= button_link_to Spree.t('actions.back'), spree.admin_exports_path(exporter_id: @exporter.key), {icon: 'chevron-left'} %>
 
-    <%= button_link_to Spree.t(:new_export, scope: :spree_exporter_core), spree.new_admin_export_path(exporter_id: @exporter.key), { :class => "btn-success", :icon => 'add', 'data-update' => 'new_export_link', :id => 'admin_new_export' } %>
+    <%= button_link_to Spree.t(:new_export, scope: :exporter_core), spree.new_admin_export_path(exporter_id: @exporter.key), { :class => "btn-success", :icon => 'add', 'data-update' => 'new_export_link', :id => 'admin_new_export' } %>
   </div>
 <% end if can?(:create, Spree::Export) %>
 
 <% content_for :page_title do %>
-  <%= Spree.t(:export, scope: :spree_exporter_core, id: @export.id) %>
+  <%= Spree.t(:export, scope: :exporter_core, id: @export.id) %>
 <% end %>
 
 <fieldset class="export_fields">

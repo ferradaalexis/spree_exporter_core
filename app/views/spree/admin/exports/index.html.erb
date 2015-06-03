@@ -1,9 +1,9 @@
 <% content_for :page_title do %>
-  <%= Spree.t(:title, scope: [:spree_exporter_core, :exporters, @exporter.key], default: plural_resource_name(Spree::Export)) %>
+  <%= Spree.t(:title, scope: [:exporter_core, :exporters, @exporter.key], default: plural_resource_name(Spree::Export)) %>
 <% end %>
 
 <% content_for :page_actions do %>
-  <%= button_link_to Spree.t(:new_export, scope: :spree_exporter_core), spree.new_admin_export_path(exporter_id: @exporter.key), { :class => "btn-success", :icon => 'add', 'data-update' => 'new_export_link', :id => 'admin_new_export' } %>
+  <%= button_link_to Spree.t(:new_export, scope: :exporter_core), spree.new_admin_export_path(exporter_id: @exporter.key), { :class => "btn-success", :icon => 'add', 'data-update' => 'new_export_link', :id => 'admin_new_export' } %>
 <% end if can?(:create, Spree::Export) %>
 
 <%= render partial: 'spree/admin/shared/index_table_options', locals: { collection: @collection } %>
@@ -38,7 +38,7 @@
           <td><%= l(export.started_at)  if export.started_at %></td>
           <td><%= l(export.finished_at) if export.finished_at %></td>
           <td class="align-center"><i class="glyphicon <%= export.status_icon %>"></i></td>
-          <td class="actions"><%= link_to_with_icon 'eye-open', Spree.t(:show, scope: :spree_exporter_core), spree.admin_export_path(export, exporter_id: @exporter.key), :no_text => true %></td>
+          <td class="actions"><%= link_to_with_icon 'eye-open', Spree.t(:show, scope: :exporter_core), spree.admin_export_path(export, exporter_id: @exporter.key), :no_text => true %></td>
         </tr>
       <% end %>
     </tbody>

@@ -1,7 +1,7 @@
 <%= render partial: 'spree/admin/shared/error_messages', locals: { target: @export } %>
 
 <% content_for :page_title do %>
-  <%= Spree.t(:new_export, scope: [:spree_exporter_core, @exporter.key]) %>
+  <%= Spree.t(:new_export, scope: [:exporter_core, @exporter.key]) %>
 <% end %>
 
 <%= form_for [:admin, @export], :html => { :multipart => true } do |f| %>
@@ -11,7 +11,7 @@
   <fieldset class="new_export">
 
     <div class="form-actions" data-hook="buttons">
-      <%= button Spree.t(:submit_text, scope: :spree_exporter_core), 'ok', 'submit', {class: 'btn-success'} %>
+      <%= button Spree.t(:submit_text, scope: :exporter_core), 'ok', 'submit', {class: 'btn-success'} %>
       <span class="or"><%= Spree.t(:or) %></span>
       <%= button_link_to Spree.t('actions.cancel'), spree.admin_exports_path(exporter_id: @exporter.key), :icon => 'remove' %>
     </div>

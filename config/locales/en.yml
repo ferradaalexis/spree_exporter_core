@@ -22,11 +22,10 @@ en:
     admin:
       tab:
         exporters: Export
-    spree_exporter_core:
+    exporter_core:
       exports: Exporters
       export: Export %{id}
       show: Show
       new_export: New Export
       document: Document
       submit_text: Save
-    please_wait: Please wait&hellip;

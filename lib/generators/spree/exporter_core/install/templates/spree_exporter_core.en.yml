@@ -21,7 +21,7 @@
 
 en:
   spree:
-    spree_exporter_core:
+    exporter_core:
       exporters:
         example:
           title: Example Export

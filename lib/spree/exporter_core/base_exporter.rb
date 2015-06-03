@@ -14,7 +14,7 @@ module Spree
 
       # Descriptive name for exporter
       def self.name
-        Spree.t(:name, scope: [:spree_exporter_core, :exporters, key])
+        Spree.t(:name, scope: [:exporter_core, :exporters, key])
       end
 
       # A unique key identifier for exporter
