@@ -33,5 +33,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'paperclip', '~> 4.2'
 
   # For handling progress status
-  s.add_dependency 'state_machine', '~> 1.2.0'
+  s.add_dependency 'state_machines'
 end
