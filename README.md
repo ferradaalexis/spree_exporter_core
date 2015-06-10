@@ -41,7 +41,7 @@ Then, just restart your rails server
 
 ### New exporter Class
 
-The new exporter class will be placed at `app/models/spree/exporter_core/thing_exporter.rb`
+The new exporter class will be placed at `lib/spree_exporter_core/thing_exporter.rb`
 
 TODO - Sample
 

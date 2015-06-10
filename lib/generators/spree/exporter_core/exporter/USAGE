@@ -5,7 +5,7 @@ Example:
     rails generate exporter Thing
 
     This will create:
-        app/models/spree/exporter_core/thig_exporter.rb
+        lib/spree_exporter_core/thig_exporter.rb
 
     Insert exporter locales into:
         config/spree_exporter_core.en.yml

@@ -25,6 +25,13 @@ module Spree
           copy_file('spree_exporter_core.en.yml', 'config/locales/spree_exporter_core.en.yml')
         end
 
+        def include_spree_exporter_core_from_lib
+          inject_into_file 'config/application.rb', "# Load application's exporters
+    Dir.glob(File.join(File.dirname(__FILE__), \"../lib/spree_exporter_core/*_exporter.rb\")) do |c|
+      Rails.configuration.cache_classes ? require(c) : load(c)
+    end\n\n    ", :before => "config.to_prepare do", :verbose => true
+        end
+
         def run_migrations
           run_migrations = options[:auto_run_migrations] || ['', 'y', 'Y'].include?(ask 'Would you like to run the migrations now? [Y/n]')
           if run_migrations

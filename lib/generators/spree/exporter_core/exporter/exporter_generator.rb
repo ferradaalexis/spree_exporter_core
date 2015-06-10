@@ -5,7 +5,7 @@ module Spree
         source_root File.expand_path('../templates', __FILE__)
 
         def add_exporter_class
-          template('exporter.rb', "app/models/spree/#{file_name}_exporter.rb")
+          template('exporter.rb', "lib/spree_exporter_core/#{file_name}_exporter.rb")
         end
 
         def add_locale
