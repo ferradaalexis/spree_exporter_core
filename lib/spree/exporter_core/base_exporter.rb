@@ -34,6 +34,12 @@ module Spree
       end
 
       # Load data to be exported
+      #
+      # Examples
+      #   export_data()
+      #   # => #<File:/SOME/PATH/some_file_name.xls>
+      #
+      # Returns the exported File instance
       def export_data
         raise "#{__FILE__}:#{__LINE__} You must define it"
       end
