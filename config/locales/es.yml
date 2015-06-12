@@ -1,0 +1,27 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  activerecord:
+    models:
+      spree/export:
+        one: Exportación
+        other: Exportaciones
+    attributes:
+      spree/export:
+        document: Documento
+        document_content_type: Tipo Contenido
+        started_at: Iniciado
+        finished_at: Terminado
+        state: Estado
+        created_at: Generado
+        updated_at: Actualizado
+        exporter: Exportador
+        messages: Mensajes
+  spree:
+    exporters: Exportaciones
+    exporter_core:
+      export: Exportación %{id}
+      show: Ver
+      new_export: Nueva Exportación
+      submit_text: Generar
