@@ -10,6 +10,7 @@ en:
     attributes:
       spree/export:
         document: Document
+        document_content_type: Content Type
         started_at: Started
         finished_at: Finished
         state: State
@@ -19,13 +20,8 @@ en:
         messages: Messages
   spree:
     exporters: Exporters
-    admin:
-      tab:
-        exporters: Export
     exporter_core:
-      exports: Exporters
       export: Export %{id}
       show: Show
       new_export: New Export
-      document: Document
       submit_text: Save
