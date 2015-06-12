@@ -75,6 +75,18 @@ Edit `config/initializers/spree.rb` to define/modify the available exporters.
 Spree::ExporterCore::Config.exporters << Spree::ThingExporter
 ```
 
+### Paperclip Spoof Detection
+
+Paperclip add an automatic validation that checks uploaded files for content type spoofing.
+
+So, maybe you can have a problems with the spoof detection added. In order to fix this, you can  use the option called `:content_type_mappingsp` that will allow you to specify an extension that cannot otherwise be mapped. For example:
+
+```ruby
+Paperclip.options[:content_type_mappings] = {
+  :xls => "CDF V2 Document, No summary info"
+}
+```
+
 
 Testing
 -------
