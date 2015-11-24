@@ -10,6 +10,8 @@
 
   <fieldset class="new_export">
 
+    <%= render partial: "spree/admin/exports/#{@exporter.key}_filters", locals: { f: f } if lookup_context.exists?("#{@exporter.key}_filters", ['spree/admin/exports'], true) %>
+
     <div class="form-actions" data-hook="buttons">
       <%= button Spree.t(:submit_text, scope: :exporter_core), 'ok', 'submit', {class: 'btn-success'} %>
       <span class="or"><%= Spree.t(:or) %></span>
