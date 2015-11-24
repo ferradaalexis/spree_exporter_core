@@ -2,7 +2,7 @@ class Spree::Export < ActiveRecord::Base
   include GlobalID::Identification
 
   serialize :messages, Array
-
+  serialize :filters, JSON
 
   has_attached_file :document
   do_not_validate_attachment_file_type :document
