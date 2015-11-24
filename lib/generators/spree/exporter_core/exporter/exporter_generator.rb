@@ -8,6 +8,10 @@ module Spree
           template('exporter.rb', "lib/spree_exporter_core/#{file_name}_exporter.rb")
         end
 
+        def add_filters_partial
+          create_file("app/views/spree/admin/exports/_#{file_name}_filters.html.erb", "<!-- Add your filters here, you can use ransack predicates -->")
+        end
+
         def add_locale
           inject_into_file 'config/locales/spree_exporter_core.en.yml', "
         #{file_name}:
