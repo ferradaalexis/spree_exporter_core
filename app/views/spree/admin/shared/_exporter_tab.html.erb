@@ -1,3 +1,5 @@
-<ul class="nav nav-sidebar">
-  <%= main_menu_tree Spree.t(:exporters), icon: "transfer", sub_menu: "exporters", url: '#sidebar-exporters' %>
-</ul>
+<% if current_spree_user.admin? %>
+  <ul class="nav nav-sidebar">
+    <%= main_menu_tree Spree.t(:exporters), icon: "transfer", sub_menu: "exporters", url: '#sidebar-exporters' %>
+  </ul>
+<% end %>
