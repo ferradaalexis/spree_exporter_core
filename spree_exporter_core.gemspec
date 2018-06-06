@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_exporter_core'
-  s.version     = '3.0.0'
+  s.version     = '3.4.0'
   s.summary     = 'Export engine for Spree backend'
   s.description = 'Enables a easily way for exports data from Spree, depending as you need'
   s.required_ruby_version = '>= 2.0.0'
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 3.0.0'
+  s.add_dependency 'spree_core', '~> 3.4.0'
 
   s.add_development_dependency 'capybara', '~> 2.4'
   s.add_development_dependency 'coffee-rails'
@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'sqlite3'
 
   # For file upload to read
-  s.add_development_dependency 'paperclip', '~> 4.2'
+  s.add_development_dependency 'paperclip', '~> 5.0'
 
   # For handling progress status
   s.add_dependency 'state_machines'
