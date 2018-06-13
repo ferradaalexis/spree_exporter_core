@@ -1,7 +1,7 @@
 module Spree
   module Admin
     class ExportsController < Spree::Admin::ResourceController
-      before_filter :set_exporter
+      before_action :set_exporter, raise: false
 
       # GET /admin/exporters/:exporter/exports
       def index
